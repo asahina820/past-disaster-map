@@ -21,6 +21,23 @@ map.addControl(new maplibregl.ScaleControl() );
 // TODO: attribution表示
 // TODO: 画面がロードされたら地図にレイヤを追加する
 map.on('load', function () {
+    //rasterを追加
+    map.addSource('bousai', {
+        'type': 'raster',
+        'tiles': [
+            `https://w-hazardmap.nhk.or.jp/flood/flood-all/20220720/{z}/{x}/{y}.png`
+        ],
+        'tileSize': 256,
+        
+    });
+    map.addLayer({
+        'id': 'bousai_raster',
+        'type': 'raster',
+        'source': 'bousai',
+        
+    });
+
+
     // 避難所情報レイヤを追加
     map.addSource('ibaraki_polygon', {
         type: 'geojson',
