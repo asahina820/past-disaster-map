@@ -89,7 +89,7 @@ map.on('load', function () {
         }
     });
 	
-	map.on('click', 'ibaraki_polygon', (e) => {
+	map.on('click', 'ibaraki_polygon_fill', (e) => {
 
 		var h=(
 		    //`<div class="popup">${name}</div>`
