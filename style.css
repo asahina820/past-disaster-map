@@ -36,9 +36,9 @@ body {
   }
   
 .my-class .maplibregl-popup-content {
-background-color: rgb(252, 235, 63);
+background-color: rgb(187, 255, 187);
 box-shadow: 6px 6px 6px rgba(100, 100, 100, 0.24);
-border: 2px solid #ffa450;
+border: 2px solid rgb(0, 172, 74);
 border-radius: 8px;
 
 }

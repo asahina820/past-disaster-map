@@ -75,7 +75,7 @@ map.on('load', function () {
         'source': 'shelter_point',
         'layout': {
         'icon-image': 'shelter_icon',
-        'icon-size': 0.05
+        'icon-size': 0.1
         }
     });
 
