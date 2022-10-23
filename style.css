@@ -27,3 +27,18 @@ body {
     height: 100%;
 }
 /* /コンテンツ */
+
+/* /popupデザイン */
+.my-class {
+    color: rgb(0, 0, 0);  
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+.my-class .maplibregl-popup-content {
+background-color: rgb(252, 235, 63);
+box-shadow: 6px 6px 6px rgba(100, 100, 100, 0.24);
+border: 2px solid #ffa450;
+border-radius: 8px;
+
+}

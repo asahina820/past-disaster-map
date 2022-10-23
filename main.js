@@ -87,12 +87,24 @@ map.on('load', function () {
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
+        var html=(
+            //`<div class="popup">${name}</div>`
+            `<div >
+                    ${name}
+            </div>`
+        )
+
         
         // ポップアップを表示する
-        new maplibregl.Popup()
+        new maplibregl.Popup({
+            className: 'my-class', 
+            closeButton: false,
+        })
         .setLngLat(coordinates)
-        .setHTML(name)
+        .setHTML(html)
         .addTo(map);
+
+       
 
         
     });
