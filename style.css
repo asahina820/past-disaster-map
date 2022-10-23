@@ -6,19 +6,20 @@ body {
 }
 /* ヘッダー */
 #header {
-    height: 5%;
+    height: 10%;
     background-color: #FFC042;
     display: flex;
     align-items: center;
 }
-#header-title{
-    padding-left: 10px;
+#logo{
+    padding-left: 30px;
+    height: 90%;
 }
 /* /ヘッダー */
 /* コンテンツ */
 /* 地図 */
 #map-area {
-    height: 95%;
+    height: 90%;
     display: flex;
 }
 #map {
