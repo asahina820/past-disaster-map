@@ -88,6 +88,29 @@ map.on('load', function () {
         'icon-size': 0.1
         }
     });
+	
+	map.on('click', 'ibaraki_polygon', (e) => {
+
+		var h=(
+		    //`<div class="popup">${name}</div>`
+		    `<div >
+			    ${e.features[0].properties.N03_004}<br>
+			    ${e.features[0].properties.タイトル}<br>
+		    </div>
+		    <iframe src=${e.features[0].properties.動画のURL}></iframe>`
+		)
+
+
+
+
+		new maplibregl.Popup({
+		    className: 'article-class', 
+		    closeButton: false,
+		})
+		.setLngLat(e.lngLat)
+		.setHTML(h)
+		.addTo(map);
+	    });
 
     // 避難所情報の地物をクリックしたときに、コメントを表示する
     map.on('click', 'shelter_point', function (e) {
@@ -116,28 +139,7 @@ map.on('load', function () {
   
     });
 
-    map.on('click', 'ibaraki_polygon', (e) => {
-
-        var h=(
-            //`<div class="popup">${name}</div>`
-            `<div >
-                    ${e.features[0].properties.N03_004}<br>
-                    ${e.features[0].properties.タイトル}<br>
-            </div>
-            <iframe src=${e.features[0].properties.動画のURL}></iframe>`
-        )
-
-        
-      
-
-        new maplibregl.Popup({
-            className: 'article-class', 
-            closeButton: false,
-        })
-        .setLngLat(e.lngLat)
-        .setHTML(h)
-        .addTo(map);
-    });
+    
 
         
          
