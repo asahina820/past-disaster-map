@@ -55,16 +55,6 @@ map.on('load', function () {
             'fill-opacity': 0.2
         }
     });
-    map.addLayer({
-        'id': 'ibaraki_polygon',
-        'type': 'line',
-        'source': 'states',
-        'layout': {},
-        'paint': {
-        'line-color': '#627BC1',
-        'line-width': 2
-        }
-    });
 
     //避難施設を追加
     // 避難所情報レイヤを追加
