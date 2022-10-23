@@ -112,7 +112,7 @@ map.on('load', function () {
             //`<div class="popup">${name}</div>`
             `<div >
                     ${e.features[0].properties.N03_004}<br>
-                    ${e.features[0].properties.タイトル}
+                    ${e.features[0].properties.タイトル}<br>
                     ${e.features[0].properties.動画のURL}
             </div>`
         )
@@ -121,7 +121,7 @@ map.on('load', function () {
       
 
         new maplibregl.Popup({
-            className: 'my-class', 
+            className: 'article-class', 
             closeButton: false,
         })
         .setLngLat(e.lngLat)
