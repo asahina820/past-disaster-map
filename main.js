@@ -26,6 +26,7 @@ map.on('load', function () {
         type: 'geojson',
         data: './data/ibaraki_polygon.geojson'
     });
+    //test
     map.addLayer({
         'id': 'ibaraki_polygon',
 		'type': 'fill',
