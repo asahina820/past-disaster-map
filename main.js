@@ -107,11 +107,29 @@ map.on('load', function () {
     });
 
     map.on('click', 'ibaraki_polygon', (e) => {
-        new maplibregl.Popup()
+
+        var h=(
+            //`<div class="popup">${name}</div>`
+            `<div >
+                    ${e.features[0].properties.N03_004}<br>
+                    ${e.features[0].properties.タイトル}
+                    ${e.features[0].properties.動画のURL}
+            </div>`
+        )
+
+        
+      
+
+        new maplibregl.Popup({
+            className: 'my-class', 
+            closeButton: false,
+        })
         .setLngLat(e.lngLat)
-        .setHTML(e.features[0].properties.N03_004)
+        .setHTML(h)
         .addTo(map);
-        });
+    });
+
+        
          
         // Change the cursor to a pointer when
         // the mouse is over the states layer.
