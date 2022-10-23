@@ -45,7 +45,7 @@ map.on('load', function () {
     });
     //
     map.addLayer({
-        'id': 'ibaraki_polygon',
+        'id': 'ibaraki_polygon_fill',
 		'type': 'fill',
 		'source': 'ibaraki_polygon',
         'layout': {},
@@ -53,6 +53,16 @@ map.on('load', function () {
             'fill-color': '#C0C0C0',
             'fill-outline-color': '#000',
             'fill-opacity': 0.2
+        }
+    });
+    map.addLayer({
+        'id': 'ibaraki_polygon_outline',
+        'type': 'line',
+        'source': 'ibaraki_polygon',
+        'layout': {},
+        'paint': {
+        'line-color': '#627BC1',
+        'line-width': 2
         }
     });
 
