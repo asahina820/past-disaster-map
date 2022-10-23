@@ -50,9 +50,19 @@ map.on('load', function () {
 		'source': 'ibaraki_polygon',
         'layout': {},
         'paint': {
-            'fill-color': '#088',
+            'fill-color': '#C0C0C0',
             'fill-outline-color': '#000',
             'fill-opacity': 0.2
+        }
+    });
+    map.addLayer({
+        'id': 'ibaraki_polygon',
+        'type': 'line',
+        'source': 'states',
+        'layout': {},
+        'paint': {
+        'line-color': '#627BC1',
+        'line-width': 2
         }
     });
 
