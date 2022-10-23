@@ -55,4 +55,45 @@ map.on('load', function () {
             'fill-opacity': 0.2
         }
     });
+
+    //避難施設を追加
+    // 避難所情報レイヤを追加
+    map.addSource('shelter_point', {
+        type: 'geojson',
+        data: './data/hinanjo.geojson'
+    });
+    map.loadImage(
+        './data/shelter.png',
+        function (error, image) {
+            if (error) throw error;
+            map.addImage('shelter_icon', image);
+        }
+    );
+    map.addLayer({
+        'id': 'shelter_point',
+        'type': 'symbol',
+        'source': 'shelter_point',
+        'layout': {
+        'icon-image': 'shelter_icon',
+        'icon-size': 0.05
+        }
+    });
+
+    // 避難所情報の地物をクリックしたときに、コメントを表示する
+    map.on('click', 'shelter_point', function (e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var name = e.features[0].properties.P20_002;
+
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+        
+        // ポップアップを表示する
+        new maplibregl.Popup()
+        .setLngLat(coordinates)
+        .setHTML(name)
+        .addTo(map);
+
+        
+    });
 });
