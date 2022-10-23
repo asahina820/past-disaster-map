@@ -103,9 +103,27 @@ map.on('load', function () {
         .setLngLat(coordinates)
         .setHTML(html)
         .addTo(map);
-
-       
-
-        
+  
     });
+
+    map.on('click', 'ibaraki_polygon', (e) => {
+        new maplibregl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML(e.features[0].properties.N03_004)
+        .addTo(map);
+        });
+         
+        // Change the cursor to a pointer when
+        // the mouse is over the states layer.
+        map.on('mouseenter', 'ibaraki_polygon', () => {
+        map.getCanvas().style.cursor = 'pointer';
+        });
+         
+        // Change the cursor back to a pointer
+        // when it leaves the states layer.
+        map.on('mouseleave', 'ibaraki_polygon', () => {
+        map.getCanvas().style.cursor = '';
+        });
+
+
 });
