@@ -113,7 +113,6 @@ map.on('load', function () {
             `<div >
                     ${e.features[0].properties.N03_004}<br>
                     ${e.features[0].properties.タイトル}<br>
-                    ${e.features[0].properties.動画のURL}
             </div>
             <iframe src=${e.features[0].properties.動画のURL}></iframe>`
         )
